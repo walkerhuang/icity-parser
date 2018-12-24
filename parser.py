@@ -19,7 +19,7 @@ def get_xsrf():
     return token[0]
 
 def get_cookies(par1):
-    afterURL = "https://icity.ly/u/penny0701/photos"
+    afterURL = "https://icity.ly/u/yyy/photos"
     loginURL = "https://icity.ly/users/sign_in"
     login = s.post(loginURL, data = par1, headers = headers)
     if login.status_code == 200:
@@ -85,9 +85,9 @@ def get_friends(cokies, userid):
 
 authenticity_token = get_xsrf()
 
-data = {"authenticity_token" : authenticity_token, "icty_user[login]" : "secondlife", "icty_user[password]" : "huanG2015", "icty_user[remember_me]" : 0}
+data = {"authenticity_token" : authenticity_token, "icty_user[login]" : "secondlife", "icty_user[password]" : "xxx", "icty_user[remember_me]" : 0}
 
-user = "penny0701"
+user = "yyy"
 cookies = get_cookies(data)
 for f in get_friends(cookies, user):
     print "seaching friend " + f
